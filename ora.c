@@ -165,8 +165,19 @@ uint8_t keyboard_in(void) {
 		x=x<<1;
 		sor++;
 	}
-	if (c) {
+	if (c && sor!=4) {
 		return (oszlop+3*(sor-1));
+	}
+	else if (c && sor==4) {
+		if (oszlop==1) {
+			return '*';
+		}
+		else if (oszlop==2) {
+			return 0;
+		}
+		else if (oszlop==3) {
+			return '#';
+		}
 	}
 	else {
 		return 0;
