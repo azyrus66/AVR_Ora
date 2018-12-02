@@ -203,6 +203,7 @@ void keyboard_in(void) {
 		}
 		
 	}
+<<<<<<< HEAD
 }
 
 void input_num(uint16_t max) {
@@ -279,6 +280,24 @@ void set_time(void) {
 			}
 			break;
 		}
+=======
+	if (c && sor!=4) {
+		return (oszlop+3*(sor-1));
+	}
+	else if (c && sor==4) {
+		if (oszlop==1) {
+			return '*';
+		}
+		else if (oszlop==2) {
+			return 0;
+		}
+		else if (oszlop==3) {
+			return '#';
+		}
+	}
+	else {
+		return 0;
+>>>>>>> 18de3b95006ee6858430a0a534a7b6e1f3bee6de
 	}
 }
 
